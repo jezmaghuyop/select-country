@@ -1,3 +1,8 @@
+# @jezmaghuyop/select-country
+
+> **Fork of** [angular-material-extensions/select-country](https://github.com/angular-material-extensions/select-country)  
+> Updated for **Angular 19**, standalone components, Ivy partial compilation, and optional language overrides.  
+
 <p align="center">
   <img alt="angular-material-extensions's logo"
    height="256px" width="256px" style="text-align: center;"
@@ -417,7 +422,11 @@ This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL 
 
 ## License
 
-Copyright (c) 2020-2024 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT) <p align="center">
+Copyright (c) 2020-2024 [Anthony Nahas](https://github.com/AnthonyNahas) (forked by [Jez Reel Maghuyop](https://github.com/jezmaghuyop/select-country)). 
+
+Original project: https://github.com/angular-material-extensions/select-country
+
+Licensed under the MIT License (MIT) <p align="center">
                                                                                                             <img alt="angular-material-extensions's logo"
                                                                                                              height="92px" width="92px" style="text-align: center;"
                                                                                                              src="https://cdn.jsdelivr.net/gh/angular-material-extensions/select-country@master/assets/badge_made-in-germany.svg">
