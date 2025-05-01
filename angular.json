@@ -27,8 +27,8 @@
               "src/assets",
               {
                 "glob": "**/*",
-                "input": "./node_modules/svg-country-flags/svg",
-                "output": "/assets/svg-country-flags/svg"
+                "input": "./node_modules/svg-country-flags/svg/",
+                "output": "./assets/svg-country-flags/svg/"
               }
             ],
             "styles": [
@@ -81,7 +81,7 @@
         "build_ghpages": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref" : "/select-country/",
+            "baseHref": "/select-country/",
             "deployUrl": "/select-country/",
             "outputPath": "dist/browser",
             "index": "src/index.html",
@@ -147,18 +147,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "select-country:build"
+            "buildTarget": "select-country:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "select-country:build:production"
+              "buildTarget": "select-country:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "select-country:build"
+            "buildTarget": "select-country:build"
           }
         },
         "test": {
@@ -168,10 +168,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
@@ -218,8 +215,7 @@
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
-          "options": {
-          }
+          "options": {}
         },
         "serve-ssr": {
           "builder": "@angular-devkit/build-angular:ssr-dev-server",
@@ -239,9 +235,7 @@
           "options": {
             "browserTarget": "select-country:build:production",
             "serverTarget": "select-country:server:production",
-            "routes": [
-              "/"
-            ]
+            "routes": ["/"]
           },
           "configurations": {
             "production": {}
@@ -252,9 +246,7 @@
           "options": {
             "browserTarget": "select-country:build_ghpages:production",
             "serverTarget": "select-country:server:production",
-            "routes": [
-              "/"
-            ]
+            "routes": ["/"]
           },
           "configurations": {
             "production": {}

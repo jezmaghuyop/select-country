@@ -15,17 +15,17 @@ describe("SelectCountryComponent", () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [MatSelectCountryComponent],
-      imports: [
+    imports: [
         NoopAnimationsModule,
         ReactiveFormsModule,
         FormsModule,
         MatInputModule,
         MatAutocompleteModule,
         MatIconModule,
-      ],
-      teardown: { destroyAfterEach: false },
-    }).compileComponents();
+        MatSelectCountryComponent,
+    ],
+    teardown: { destroyAfterEach: false },
+}).compileComponents();
   }));
 
   beforeEach(() => {

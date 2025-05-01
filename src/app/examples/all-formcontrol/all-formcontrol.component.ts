@@ -1,12 +1,48 @@
 import { Component, OnInit } from "@angular/core";
-import { Country } from "@angular-material-extensions/select-country";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import {
+  Country,
+  MatSelectCountryComponent,
+} from "@angular-material-extensions/select-country";
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from "@angular/forms";
 import { GERMANY_COUNTRY } from "../contants";
+import { MarkdownModule } from "ngx-markdown";
+
+import { CommonModule } from "@angular/common";
+
+// Angular Material modules:
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { MatSelectModule } from "@angular/material/select";
+import { MatSliderModule } from "@angular/material/slider";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatButtonModule } from "@angular/material/button";
 
 @Component({
   selector: "app-all-formcontrol",
   templateUrl: "./all-formcontrol.component.html",
   styleUrls: ["./all-formcontrol.component.scss"],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MarkdownModule,
+
+    // Material
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatSliderModule,
+    MatCheckboxModule,
+    MatButtonModule,
+
+    MatSelectCountryComponent,
+  ],
 })
 export class AllFormControlComponent implements OnInit {
   selectablecountries: Country[] = [

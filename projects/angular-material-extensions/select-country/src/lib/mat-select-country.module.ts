@@ -62,19 +62,19 @@ export class MatSelectCountryModule {
   constructor(
     private iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer
-  ) {
+  ) {    
     this.registerCountries();
   }
 
   static forRoot(
-    i18n: MatSelectCountrySupportedLanguages
+    i18n?: MatSelectCountrySupportedLanguages
   ): ModuleWithProviders<MatSelectCountryModule> {
     return {
       ngModule: MatSelectCountryModule,
       providers: [
         {
           provide: MatSelectCountryLangToken,
-          useValue: i18n,
+          useValue: i18n ?? "en", // default to 'en'
         },
       ],
     };
@@ -83,7 +83,7 @@ export class MatSelectCountryModule {
   registerCountries() {
     for (const country of COUNTRIES_DB) {
       const countryAlpha2Code = country.alpha2Code.toLowerCase();
-      try {
+      try {        
         this.iconRegistry.addSvgIcon(
           countryAlpha2Code,
           this.sanitizer.bypassSecurityTrustResourceUrl(

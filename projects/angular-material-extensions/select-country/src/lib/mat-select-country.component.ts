@@ -133,16 +133,22 @@ export class MatSelectCountryComponent
   onTouched: any = () => {};
   debounceTimeout: any;
 
+  public i18n: string;
+
   private control: AbstractControl;
 
   constructor(
-    @Inject(forwardRef(() => MatSelectCountryLangToken)) public i18n: string,
+    @Optional()
+    @Inject(forwardRef(() => MatSelectCountryLangToken))
+    private injectedLang: string | null,
     @Optional()
     @Host()
     @SkipSelf()
     private controlContainer: ControlContainer,
     private cdRef: ChangeDetectorRef
-  ) {}
+  ) {
+    this.i18n = this.injectedLang ?? 'en';
+  }
 
   get value(): Country | null {
     return this._value;
@@ -348,6 +354,8 @@ export class MatSelectCountryComponent
       changes.language?.currentValue &&
       changes.language.currentValue !== changes.language.previousValue
     ) {
+      this.i18n = this.language;
+      
       this._loadCountriesFromDb().then((transCountries) => {
         this.countries = transCountries.filter(
           (el) =>
