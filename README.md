@@ -1,7 +1,7 @@
 # @jezmaghuyop/select-country
 
 > **Fork of** [angular-material-extensions/select-country](https://github.com/angular-material-extensions/select-country)  
-> Updated for **Angular 19**, standalone components, Ivy partial compilation, and optional language overrides.  
+> Updated for **Angular 19**, standalone components, Ivy partial compilation, and optional language overrides.
 
 <p align="center">
   <img alt="angular-material-extensions's logo"
@@ -31,6 +31,7 @@
 </p>
 
 ## Built by and for developers :heart:
+
 Do you have any question or suggestion ? Please do not hesitate to contact us!
 Alternatively, provide a PR | open an appropriate issue [here](https://github.com/angular-material-extensions/select-country/issues)
 
@@ -38,6 +39,7 @@ If you like this project, support [angular-material-extensions](https://github.c
 by starring :star: and sharing it :loudspeaker:
 
 ## Table of Contents
+
 - [Demo](#demo)
 - [Components](#components)
 - [Dependencies](#dependencies)
@@ -58,6 +60,7 @@ View all the directives and components in action at [https://angular-material-ex
 <a name="components"/>
 
 ## Library's components
+
 - `<mat-select-country>` used to display the main component
 
 ---
@@ -65,26 +68,29 @@ View all the directives and components in action at [https://angular-material-ex
 <a name="dependencies"/>
 
 ## Dependencies
-* [Angular](https://angular.io) developed and tested with `17.x`
+
+- [Angular](https://angular.io) developed and tested with `17.x`
 
 ---
 
 <a name="installation"/>
 
-##  [Installation](https://angular-material-extensions.github.io/select-country/getting-started)
+## [Installation](https://angular-material-extensions.github.io/select-country/getting-started)
 
-## 1. Install via *ng add*. (Recommended)
+## 1. Install via _ng add_. (Recommended)
 
 If Angular Material Design is not setup, just run `ng add @angular/material` [learn more](https://material.angular.io/guide/getting-started)
 
 Now add the library via the `angular schematics`
+
 ```shell
 ng add @jezmaghuyop/select-country
 ```
 
-## 2. Install via *npm*. (Alternative)
+## 2. Install via _npm_. (Alternative)
 
 Install peer dependencies
+
 ```shell
 npm i svg-country-flags -s
 ```
@@ -93,14 +99,14 @@ then update your `angular.json` like below (svg-country-flags)
 
 ```json
 "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              {
-                "glob": "**/*",
-                "input": "./node_modules/svg-country-flags/svg",
-                "output": "src/assets/svg-country-flags/svg"
-              }
-            ],
+    "src/favicon.ico",
+    "src/assets",
+    {
+        "glob": "**/*",
+        "input": "./node_modules/svg-country-flags/svg",
+        "output": "src/assets/svg-country-flags/svg"
+    }
+]
 ```
 
 Now install `@jezmaghuyop/select-country` via:
@@ -124,11 +130,15 @@ import { MatSelectCountryModule } from '@jezmaghuyop/select-country';
 import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, ...],
-  imports: [
-              MatSelectCountryModule.forRoot('de'), // you can use 'br' | 'de' | 'en' | 'es' | 'fr' | 'hr' | 'hu' | 'it' | 'nl' | 'pt' --> MatSelectCountrySupportedLanguages
-             HttpClientModule, ...],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent, ...],
+    imports: [
+        // you can use 'br' | 'de' | 'en' | 'es' | 'fr' | 'hr' | 'hu' | 'it' | 'nl' | 'pt' --> MatSelectCountrySupportedLanguages
+        // you can leave it empty `MatSelectCountryModule.forRoot()` which defaults to 'en'
+        MatSelectCountryModule.forRoot('de'), 
+        HttpClientModule,
+        ...
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
@@ -141,9 +151,13 @@ import { MatSelectCountryModule } from '@jezmaghuyop/select-country';
 import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, ...],
-  imports: [MatSelectCountryModule, HttpClientModule, ...],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent, ...],
+    imports: [
+        MatSelectCountryModule, 
+        HttpClientModule, 
+        ...
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
@@ -173,7 +187,7 @@ Other modules in your application like for lazy loading import `MatSelectCountry
 | showCallingCode   | `Input()`  |        `boolean`         |              false              | Whether the component to show the country's calling code in the label and selection                |
 | class             | `Input()`  |         `string`         |                -                | Class attribute apply style to input text or validation ignore (optional)                          |
 | language          | `Input()`  |         `string`         |                -                | the language, if not specified MatSelectCountryModule.forRoot('XX') will be used (optional)        |
-| name              | `Input()`  |         `string`         |             'country'           | the attribute name of the input element                                                            |
+| name              | `Input()`  |         `string`         |            'country'            | the attribute name of the input element                                                            |
 | autocomplete      | `Input()`  |         `string`         |                -                | the attribute autocomplete of the input element, to avoid suggestion of some browsers put 'no'     |
 | onCountrySelected | `Output()` | `EventEmitter<Country>`  |                -                | emits the selected country as object (see the interface below)                                     |
 
@@ -186,7 +200,6 @@ interface Country {
   callingCode: string;
 }
 ```
-
 
 <a name="usage"/>
 
@@ -213,7 +226,6 @@ add the `<mat-select-country>` element to your template:
   <img alt="@jezmaghuyop/select-country demonstration" style="text-align: center;"
    src="https://raw.githubusercontent.com/angular-material-extensions/select-country/HEAD/assets/v0.2.0/example2.png">
 </p>
-
 
 #### Use the library with reactive forms
 
@@ -243,18 +255,18 @@ add the `<mat-select-country>` element to your template:
 ```
 
 ```typescript
-import {Component,OnInit} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { FormControl } from "@angular/forms";
 
-import {Country} from '@jezmaghuyop/select-country';
+import { Country } from "@jezmaghuyop/select-country";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
-export class AppComponent implements OnInit{
-  title = 'select-country';
+export class AppComponent implements OnInit {
+  title = "select-country";
 
   countryFormControl = new FormControl();
   countryFormGroup: FormGroup;
@@ -264,28 +276,29 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-
     this.countryFormGroup = this.formBuilder.group({
-      country: []
+      country: [],
     });
 
-    this.countryFormGroup.get('country').valueChanges
-.subscribe(country => console
-.log('this.countryFormGroup.get("country").valueChanges', country));
+    this.countryFormGroup
+      .get("country")
+      .valueChanges.subscribe((country) =>
+        console.log(
+          'this.countryFormGroup.get("country").valueChanges',
+          country
+        )
+      );
 
-    this.countryFormControl.valueChanges
-.subscribe(country => console
-.log('this.countryFormControl.valueChanges', country));
+    this.countryFormControl.valueChanges.subscribe((country) =>
+      console.log("this.countryFormControl.valueChanges", country)
+    );
   }
-
 
   onCountrySelected($event: Country) {
     console.log($event);
   }
 }
-
 ```
-
 
 ### Predefine your countries to load
 
@@ -339,7 +352,6 @@ Result:
    src="https://raw.githubusercontent.com/angular-material-extensions/select-country/HEAD/assets/v2.1.0/predefined.png">
 </p>
 
-
 ### Improve performance - use the `itemsLoadSize` property
 
 ```html
@@ -352,6 +364,7 @@ Result:
 only 5 countries will fetched!
 
 ### Change language dynamically - use the `language` property
+
 ```html
 <mat-select-country appearance="outline"
                     label="Country"
@@ -360,11 +373,9 @@ only 5 countries will fetched!
 </mat-select-country>
 ```
 
-
 <a name="run-demo-app-locally"/>
 
-###  Run Demo App Locally
-
+### Run Demo App Locally
 
 Build the library
 
@@ -378,9 +389,8 @@ Serve the demo app
 $ npm start
 ```
 
-
-
 ## Other Angular Libraries
+
 - [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
 - [ngx-linkifyjs](https://github.com/AnthonyNahas/ngx-linkifyjs)
 - [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
@@ -389,6 +399,7 @@ $ npm start
 - [@angular-material-extensions/fab-menu](https://github.com/angular-material-extensions/fab-menu)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
 - [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)
+
 ---
 
 <a name="who_is_using_this_lib"/>
@@ -399,16 +410,17 @@ $ npm start
 
 To put your project here, please drop an appropriate PR
 
------
+---
 
 <a name="support"/>
 
 ## Support
-+ Drop an email to: [Anthony Nahas](mailto:anthony.na@hotmail.de)
-+ or open an appropriate [issue](https://github.com/angular-material-extensions/select-country/issues)
-+ let us chat on [Gitter](https://gitter.im/angular-material-extensions/Lobby)
 
- Built by and for developers :heart: we will help you :punch:
+- Drop an email to: [Anthony Nahas](mailto:anthony.na@hotmail.de)
+- or open an appropriate [issue](https://github.com/angular-material-extensions/select-country/issues)
+- let us chat on [Gitter](https://gitter.im/angular-material-extensions/Lobby)
+
+Built by and for developers :heart: we will help you :punch:
 
 ---
 
@@ -422,12 +434,12 @@ This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL 
 
 ## License
 
-Copyright (c) 2020-2024 [Anthony Nahas](https://github.com/AnthonyNahas) (forked by [Jez Reel Maghuyop](https://github.com/jezmaghuyop/select-country)). 
+Copyright (c) 2020-2024 [Anthony Nahas](https://github.com/AnthonyNahas) (forked by [Jez Reel Maghuyop](https://github.com/jezmaghuyop/select-country)).
 
 Original project: https://github.com/angular-material-extensions/select-country
 
 Licensed under the MIT License (MIT) <p align="center">
-                                                                                                            <img alt="angular-material-extensions's logo"
+<img alt="angular-material-extensions's logo"
                                                                                                              height="92px" width="92px" style="text-align: center;"
                                                                                                              src="https://cdn.jsdelivr.net/gh/angular-material-extensions/select-country@master/assets/badge_made-in-germany.svg">
-                                                                                                          </p>
+</p>
