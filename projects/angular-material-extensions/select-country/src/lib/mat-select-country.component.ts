@@ -18,12 +18,24 @@ import {
   ControlContainer,
   ControlValueAccessor,
   FormControl,
+  FormsModule,
   NG_VALUE_ACCESSOR,
+  ReactiveFormsModule,
   Validators,
 } from "@angular/forms";
-import { MatAutocompleteSelectedEvent } from "@angular/material/autocomplete";
+import {
+  MatAutocompleteModule,
+  MatAutocompleteSelectedEvent,
+} from "@angular/material/autocomplete";
 import { MatSelectCountryLangToken } from "./tokens";
 import { distinctUntilChanged } from "rxjs/operators";
+import { CommonModule } from "@angular/common";
+import { MatButtonModule } from "@angular/material/button";
+import { MatMenuModule } from "@angular/material/menu";
+import { MatInputModule } from "@angular/material/input";
+import { MatIconModule } from "@angular/material/icon";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 /**
  * Country interface ISO 3166
@@ -57,6 +69,22 @@ type CountryOptionalMandatoryAlpha2Code = CustomOptional<
       useExisting: forwardRef(() => MatSelectCountryComponent),
       multi: true,
     },
+  ],
+  imports: [
+    CommonModule,
+
+    // Forms
+    FormsModule,
+    ReactiveFormsModule,
+
+    // Material
+    MatButtonModule,
+    MatMenuModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatIconModule,
+    MatProgressBarModule,
+    MatFormFieldModule,
   ],
 })
 export class MatSelectCountryComponent

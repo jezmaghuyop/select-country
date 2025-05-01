@@ -37,8 +37,10 @@ export type MatSelectCountrySupportedLanguages =
  */
 // @dynamic
 @NgModule({
-  declarations: [MatSelectCountryComponent, JoinStringsPipe],
+  declarations: [],
   imports: [
+    JoinStringsPipe,
+    MatSelectCountryComponent,
     CommonModule,
 
     // Forms
