@@ -9,7 +9,7 @@
    src="https://cdn.jsdelivr.net/gh/angular-material-extensions/select-country@master/assets/angular-material-extensions-logo.svg">
 </p>
 
-# @angular-material-extensions/select-country - Angular Material component that allow users to select a country or nationality with an autocomplete feature
+# @jezmaghuyop/select-country - Angular Material component that allow users to select a country or nationality with an autocomplete feature
 
 [![npm version](https://badge.fury.io/js/%40angular-material-extensions%2Fselect-country.svg)](https://badge.fury.io/js/%40angular-material-extensions%2Fselect-country)
 [![npm demo](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://angular-material-extensions.github.io/select-country)
@@ -21,12 +21,12 @@
 [![license](https://img.shields.io/github/license/angular-material-extensions/select-country.svg?style=flat-square)](https://github.com/angular-material-extensions/select-country/blob/master/LICENSE)
 
 <p align="center">
-  <img alt="@angular-material-extensions/select-country demonstration" style="text-align: center;"
+  <img alt="@jezmaghuyop/select-country demonstration" style="text-align: center;"
    src="https://raw.githubusercontent.com/angular-material-extensions/select-country/HEAD/assets/v0.2.0/select-country.gif">
 </p>
 
 <p align="center">
-  <img alt="@angular-material-extensions/select-country demonstration" style="text-align: center;"
+  <img alt="@jezmaghuyop/select-country demonstration" style="text-align: center;"
    src="https://raw.githubusercontent.com/angular-material-extensions/select-country/HEAD/assets/v0.2.0/select-country.png">
 </p>
 
@@ -79,7 +79,7 @@ If Angular Material Design is not setup, just run `ng add @angular/material` [le
 
 Now add the library via the `angular schematics`
 ```shell
-ng add @angular-material-extensions/select-country
+ng add @jezmaghuyop/select-country
 ```
 
 ## 2. Install via *npm*. (Alternative)
@@ -103,10 +103,10 @@ then update your `angular.json` like below (svg-country-flags)
             ],
 ```
 
-Now install `@angular-material-extensions/select-country` via:
+Now install `@jezmaghuyop/select-country` via:
 
 ```shell
-npm install --save @angular-material-extensions/select-country
+npm install --save @jezmaghuyop/select-country
 ```
 
 ### Import the library
@@ -116,11 +116,11 @@ If you installed the library via angular schematics, you can skip this step
 Once installed you need to import the main module and the `HttpClientModule`:
 
 ```js
-import { MatSelectCountryModule } from "@angular-material-extensions/select-country";
+import { MatSelectCountryModule } from "@jezmaghuyop/select-country";
 ```
 
 ```typescript
-import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
+import { MatSelectCountryModule } from '@jezmaghuyop/select-country';
 import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
@@ -137,7 +137,7 @@ export class AppModule {
 in other modules
 
 ```typescript
-import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
+import { MatSelectCountryModule } from '@jezmaghuyop/select-country';
 import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
@@ -200,17 +200,17 @@ add the `<mat-select-country>` element to your template:
 ```
 
 <p align="center">
-  <img alt="@angular-material-extensions/select-country demonstration" style="text-align: center;"
+  <img alt="@jezmaghuyop/select-country demonstration" style="text-align: center;"
    src="https://raw.githubusercontent.com/angular-material-extensions/select-country/HEAD/assets/v0.2.0/example_full.png">
 </p>
 
 <p align="center">
-  <img alt="@angular-material-extensions/select-country demonstration" style="text-align: center;"
+  <img alt="@jezmaghuyop/select-country demonstration" style="text-align: center;"
    src="https://raw.githubusercontent.com/angular-material-extensions/select-country/HEAD/assets/v0.2.0/example3.png">
 </p>
 
 <p align="center">
-  <img alt="@angular-material-extensions/select-country demonstration" style="text-align: center;"
+  <img alt="@jezmaghuyop/select-country demonstration" style="text-align: center;"
    src="https://raw.githubusercontent.com/angular-material-extensions/select-country/HEAD/assets/v0.2.0/example2.png">
 </p>
 
@@ -246,7 +246,7 @@ add the `<mat-select-country>` element to your template:
 import {Component,OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 
-import {Country} from '@angular-material-extensions/select-country';
+import {Country} from '@jezmaghuyop/select-country';
 
 @Component({
   selector: 'app-root',
@@ -298,7 +298,7 @@ export class AppComponent implements OnInit{
 ```
 
 ```typescript
-import {Country} from '@angular-material-extensions/select-country';
+import {Country} from '@jezmaghuyop/select-country';
 
 predefinedCountries: Country[] = [
   {
@@ -335,7 +335,7 @@ predefinedCountries: Country[] = [
 Result:
 
 <p align="center">
-  <img alt="@angular-material-extensions/select-country demonstration" style="text-align: center;"
+  <img alt="@jezmaghuyop/select-country demonstration" style="text-align: center;"
    src="https://raw.githubusercontent.com/angular-material-extensions/select-country/HEAD/assets/v2.1.0/predefined.png">
 </p>
 
