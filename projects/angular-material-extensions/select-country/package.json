@@ -1,7 +1,7 @@
 {
   "name": "@jezmaghuyop/select-country",
   "description": "Fork of @angular-material-extensions/select-country updated for Angular 19 support. Original: https://github.com/angular-material-extensions/select-country",
-  "version": "19.0.3",
+  "version": "19.0.5",
   "homepage": "https://github.com/jezmaghuyop/select-country",
   "author": {
     "name": "Jez Reel Maghuyop",

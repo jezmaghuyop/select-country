@@ -1,4 +1,4 @@
-<mat-form-field [appearance]="appearance" [class.d-block]="extendWidth">
+<mat-form-field [appearance]="appearance" [class.d-block]="extendWidth" [ngClass]="formClass()">
   <mat-label *ngIf="label">{{ label }}</mat-label>
   <input
     autocomplete="off"

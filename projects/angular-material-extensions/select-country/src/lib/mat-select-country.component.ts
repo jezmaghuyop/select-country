@@ -5,6 +5,7 @@ import {
   forwardRef,
   Host,
   Inject,
+  input,
   Input,
   OnChanges,
   OnInit,
@@ -100,6 +101,7 @@ export class MatSelectCountryComponent
   @Input() nullable: boolean = true;
   @Input() readonly: boolean;
   @Input() tabIndex: number | string;
+  formClass = input<string>();
   @Input() class: string;
   @Input() itemsLoadSize: number = 20;
   @Input() loading: boolean;
@@ -355,7 +357,7 @@ export class MatSelectCountryComponent
       changes.language.currentValue !== changes.language.previousValue
     ) {
       this.i18n = this.language;
-      
+
       this._loadCountriesFromDb().then((transCountries) => {
         this.countries = transCountries.filter(
           (el) =>
